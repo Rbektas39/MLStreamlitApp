@@ -36,6 +36,12 @@ The app is designed to demonstrate key machine learning concepts including model
 
 ---
 
+## App Preview
+
+### Model Performance Output
+
+![Model Performance](https://raw.githubusercontent.com/Rbektas39/MLStreamlitApp/main/images/model_performance.png)
+
 ## How to Run Locally
 
 1. Clone the repository:
