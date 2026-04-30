@@ -2,50 +2,52 @@
 
 ## Project Overview
 
-This project is an interactive Streamlit application that explores how building design characteristics influence energy demand. Users can train and compare supervised machine learning models to predict building heating and cooling loads based on structural features.
+The Energy Efficiency ML Explorer is an interactive Streamlit app that allows users to explore supervised machine learning models for predicting building energy demand. The app uses building design characteristics to predict either heating load or cooling load.
 
-The app is designed to demonstrate key machine learning concepts including model selection, hyperparameter tuning, and performance evaluation in a sustainability context.
-
----
+Users can work with the built-in energy efficiency dataset or upload their own CSV file. The app allows users to select predictor variables, choose a target variable, adjust model hyperparameters, compare models, and evaluate prediction performance using numerical metrics and visualizations.
 
 ## Live App
 
 (https://energy-efficiency-ml-explorer.streamlit.app/)
 
----
+## Repository
+
+(https://github.com/Rbektas39/Bektas---Data---Science---Portfolio)
 
 ## Features
 
-- Upload your own dataset or use a built-in energy efficiency dataset
-- Select a target variable (e.g., Heating Load or Cooling Load)
-- Choose from multiple regression models:
-  - Linear Regression
-  - Decision Tree Regressor
-  - Random Forest Regressor
-- Adjust hyperparameters using interactive controls
-- Evaluate model performance using:
-  - R² (coefficient of determination)
-  - Mean Absolute Error (MAE)
-  - Root Mean Squared Error (RMSE)
-- Visualize results with:
-  - Actual vs Predicted plots
-  - Residual plots
-  - Feature importance (for tree-based models)
-- Compare model performance side-by-side
-- Generate predictions from custom user input
+- Use a built-in energy efficiency dataset
+- Upload a custom CSV dataset
+- Select a target variable for prediction
+- Select predictor variables
+- Train and evaluate multiple regression models
+- Adjust model hyperparameters
+- Compare model performance across models
+- View actual vs. predicted plots
+- View residual plots
+- View feature importance for tree-based models
+- Make a prediction using custom input values
 
----
+## Machine Learning Models
 
-## App Preview
+The app includes three supervised regression models:
 
-### Model Performance Output
+1. **Linear Regression**
+   - A baseline model that estimates a linear relationship between predictor variables and the target variable.
 
-![Model Performance](https://raw.githubusercontent.com/Rbektas39/MLStreamlitApp/main/images/model_performance.png)
+2. **Decision Tree Regressor**
+   - A tree-based model that splits the data into decision rules. It can capture non-linear relationships but may overfit if the tree becomes too complex.
 
-## How to Run Locally
+3. **Random Forest Regressor**
+   - An ensemble model that combines multiple decision trees. It often performs better than a single decision tree because it averages across many trees.
 
-1. Clone the repository:
+## Data Requirements
 
-```bash
-git clone https://github.com/Rbektas39/MLStreamlitApp.git
-cd MLStreamlitApp
+Users can upload their own dataset in CSV format. However, the app currently uses only numeric columns for modeling.
+
+Non-numeric columns, including categorical variables such as names, labels, regions, building types, or categories, are automatically dropped during preprocessing. If users want categorical variables included in the model, they need to encode those variables before uploading the dataset.
+
+For example, a categorical column like:
+
+```text
+Building Type: Office, School, Residential
